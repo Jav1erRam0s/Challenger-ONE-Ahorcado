@@ -1,15 +1,13 @@
-var lista_de_palabras = [
-  "ELECTRONICA",
-  "MOUSE",
-  "CORAZON",
-  "TELEVISOR",
-  "MATE",
-  "INFORMATICA",
-  "MECANICA",
-  "RATON",
-  "NARANJA",
-  "CONTROL",
-];
+localStorage.setItem("0", "CONTROL");
+localStorage.setItem("1", "ELECTRONICA");
+localStorage.setItem("2", "MOUSE");
+localStorage.setItem("3", "CORAZON");
+localStorage.setItem("4", "TELEVISOR");
+localStorage.setItem("5", "MATE");
+localStorage.setItem("6", "INFORMATICA");
+localStorage.setItem("7", "MECANICA");
+localStorage.setItem("8", "RATON");
+localStorage.setItem("9", "NARANJA");
 
 var palabraElegida = "";
 var estado_de_ahorcado = [];
@@ -17,12 +15,11 @@ var letras_ya_introducidas = [];
 let intentos = 6;
 
 function elegirPalabra() {
-  var random = Math.floor(Math.random() * lista_de_palabras.length);
-  for (let iterator of lista_de_palabras[random]) {
+  var random = Math.floor(Math.random() * localStorage.length);
+  for (let iterator of localStorage.getItem(random)) {
     estado_de_ahorcado.push("-");
   }
-  console.log(lista_de_palabras);
-  return lista_de_palabras[random];
+  return localStorage.getItem(random);
 }
 
 function validarLetra(letra) {
@@ -59,6 +56,10 @@ function actualizarEstadoAhorcado(indices, letra) {
 }
 
 function inicialJuego() {
+  // Inicializamos las variables
+  intentos = 6;
+  estado_de_ahorcado = [];
+  letras_ya_introducidas = [];
   palabraElegida = elegirPalabra();
   console.log("PALABRA ELEGIDA : " + palabraElegida);
 
@@ -103,12 +104,26 @@ function inicialJuego() {
 
 /* --------------------------------------------------------------------------- */
 
+function incluida(palabra) {
+  for (var i = 0, len = localStorage.length; i < len; i++) {
+    var key = localStorage.key(i);
+    var value = localStorage[key];
+    if (value == palabra) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function guardar() {
-  var palabra = "MARADONA";
-  if (lista_de_palabras.includes(palabra)) {
+  var palabra = document.getElementById("input-text").value.toUpperCase();
+
+  if (incluida(palabra)) {
     alert("La palabra ya se encuentra incluida");
     return;
   }
-  lista_de_palabras.push(palabra);
+  localStorage.setItem(localStorage.length, palabra);
+
   alert("Se guardo con exito");
+  window.location.replace("juego.html");
 }
