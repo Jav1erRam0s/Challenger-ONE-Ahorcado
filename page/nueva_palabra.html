@@ -5,25 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles-index.css" />
     <script type="text/javascript" src="../js/logica-ahorcado.js"></script>
     <title>Nueva palabra</title>
   </head>
   <body>
-    <input id="input-text" type="Ingrese la nueva palabra" />
-    <br />
-    <br />
-    <!--<a href="juego.html">-->
-    <input
-      class="action-button"
-      type="submit"
-      value="Guardar y empezar"
-      onclick="guardar()"
-    />
-    <!--</a>-->
-    <br />
-    <br />
-    <a href="../index.html">
-      <input type="submit" value="Cancelar" />
-    </a>
+    <main>
+      <section id="actions" class="centerHV">
+        <div>
+          <input id="input-text" type="Ingrese la nueva palabra" />
+        </div>
+        <br/>
+        <div>
+          <input
+            class="action-button"
+            type="submit"
+            value="Guardar y empezar"
+            onclick="guardar()"
+          />
+        </div>
+        <br/>
+        <div>
+          <a href="../index.html">
+            <input class="action-button" type="submit" value="Cancelar" />
+          </a>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

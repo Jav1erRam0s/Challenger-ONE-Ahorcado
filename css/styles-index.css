@@ -1,0 +1,45 @@
+body {
+  background-color: gray;
+}
+
+.centerH {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.action-button {
+  background-color: darkcyan;
+  width: 250px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.action-button:hover {
+  background-color: darkgray;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.centerHV {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#input-text {
+  text-align: center;
+  width: 240px;
+  height: 30px;
+}

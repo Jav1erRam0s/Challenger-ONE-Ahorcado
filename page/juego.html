@@ -5,21 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/styles-index.css" />
     <script type="text/javascript" src="../js/logica-ahorcado.js"></script>
     <title>Juego</title>
   </head>
   <body>
-    <input
-      class="action-button"
-      type="submit"
-      value="Nuevo juego"
-      onclick="inicialJuego()"
-    />
-    <br />
-    <br />
-    <a href="../index.html">
-      <button>Desistir</button>
-    </a>
+    <main>
+      <!-- Grafico de ahorcado -->
+      <section id="panelcanvas">
+        <div class="centerH">
+          <canvas id="panelGraf" width="300" height="400"></canvas>
+        </div>
+        <div class="centerH">
+          <canvas id="panelText" width="300" height="70"></canvas>
+        </div>
+        <div class="centerH">
+          <canvas id="panelLetrasUsadas" width="700" height="70"></canvas>
+        </div>
+      </section>
+      <!-- Menu de acciones -->
+      <section id="actions" class="centerH">
+        <input
+          class="action-button"
+          type="submit"
+          value="Nuevo juego"
+          onclick="inicialJuego()"
+        />
+        <a href="../index.html">
+          <button class="action-button">Desistir</button>
+        </a>
+      </section>
+    </main>
 
     <script>
       inicialJuego();
